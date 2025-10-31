@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="homepage.css">
+  <style>
+    .product-details {
+      max-width: 800px;
+      margin: 80px auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 40px;
+      text-align: center;
+    }
+    .product-details img {
+      width: 250px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      background: #ffcc00;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #111;
+      font-weight: bold;
+    }
+    .back-link:hover {
+      background: #e6b800;
+    }
+  </style>
+</head>
+<body>
+  <div class="product-details">
+    <img id="product-image" src="" alt="Product Image">
+    <h2 id="product-name"></h2>
+    <p id="product-description"></p>
+    <h3 id="product-price"></h3>
+    <a href="payment.html" class="back-link"> Byt Now -></a>
+  </div>
+
+  <script>
+    const products = {
+      "real-madrid-home": {
+        name: "Real Madrid Home Kit",
+        description: "Official Real Madrid 2025 home kit. Lightweight, breathable, and made with recycled materials.",
+        price: "1099 MAD",
+        image: "./assets/p1.webp"
+      },
+      "barcelona-home": {
+        name: "FC Barcelona Home Kit",
+        description: "Official 2025 FC Barcelona home kit with Nike Dri-FIT ADV technology.",
+        price: "879 MAD",
+        image: "./assets/barca1.jpeg"
+      },
+      "real-madrid-away": {
+        name: "Real Madrid Away Kit",
+        description: "Classic away design combining tradition with modern comfort.",
+        price: "979 MAD",
+        image: "./assets/p3.jpg"
+      },
+      "barcelona-away": {
+        name: "FC Barcelona Away Kit",
+        description: "2025 FC Barcelona away shirt. Comfortable fit with iconic club style.",
+        price: "1099 MAD",
+        image: "./assets/barca3.jpg"
+      },
+      "man-united-home": {
+        name: "Manchester United Home Kit",
+        description: "2025 Manchester United home kit featuring adidas AEROREADY technology.",
+        price: "650 MAD",
+        image: "./assets/united1.jpg"
+      },
+      "inter-milan": {
+        name: "Inter Milan Home Kit",
+        description: "Inter Milan 2025 home shirt in traditional black and blue stripes.",
+        price: "990 MAD",
+        image: "./assets/p4.jpg"
+      },
+      "ac-milan": {
+        name: "AC Milan Home Kit",
+        description: "Official AC Milan home shirt for 2025 — classic red and black design.",
+        price: "650 MAD",
+        image: "./assets/milna.webp"
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    const product = products[id];
+
+    if (product) {
+      document.getElementById("product-name").textContent = product.name;
+      document.getElementById("product-description").textContent = product.description;
+      document.getElementById("product-price").textContent = product.price;
+      document.getElementById("product-image").src = product.image;
+    } else {
+      document.querySelector(".product-details").innerHTML = "<h2>Product not found</h2>";
+    }
+  </script>
+</body>
+</html>
