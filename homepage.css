@@ -10,13 +10,17 @@ header {
   justify-content: space-between;
   align-items: center;
   background:none;
-  color: #070707;
+  color: #ffcc00;
   padding: 15px 40px;
+  position: sticky;
+  top: 0; 
 }
 
 .logo {
   font-size: 1.5em;
+  margin-left: 10px;
   font-weight: bold;
+  
 }
 
 nav ul {
@@ -26,7 +30,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: rgb(0, 0, 0);
+  color: #ffcc00;
   text-decoration: none;
   transition: 0.3s;
 }
@@ -36,10 +40,11 @@ nav ul li a:hover {
 }
 
 .hero {
+  margin-top: -84px;
   background: url('assets/background.jpg');
   color:white;
   text-align: center;
-  padding: 170px 20px;
+  padding: 260px 20px;
 }
  
 .hero h1 {
