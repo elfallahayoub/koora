@@ -12,8 +12,9 @@ body {
   background-position: center;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 80px; /* space for topbar */
 }
 
 .signup-container {
@@ -22,6 +23,34 @@ body {
   width: 380px;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Top navigation bar */
+.topbar{
+  position:fixed;
+  top:0;left:0;right:0;
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 24px;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  z-index:1000;
+}
+.topbar .brand{font-weight:700;font-size:22px;color:var(--yellow)}
+.topbar .nav a{color:#fff;margin-left:18px;text-decoration:none;font-weight:600}
+.topbar .nav a:hover{text-decoration:underline}
+
+/* Success message styling */
+.success-msg{
+  background: linear-gradient(90deg, rgba(11,110,253,0.15), rgba(255,212,0,0.12));
+  color: #06335a;
+  padding:10px 12px;
+  border-radius:8px;
+  margin-bottom:12px;
+  text-align:center;
+  font-weight:700;
 }
 
 .signup-container h2 {
@@ -88,3 +117,19 @@ input:focus {
 .footer-text a:hover {
   text-decoration: underline;
 }
+
+/* temporary message (error/success) */
+.temp-msg{
+  opacity:0;
+  transform:translateY(-6px);
+  transition:all .28s ease;
+  padding:10px 12px;
+  border-radius:8px;
+  text-align:center;
+  margin-bottom:10px;
+  background: #e6f7ff;
+  color:#05506b;
+  font-weight:700;
+}
+.temp-msg.error{ background:#fff0f0; color:#8a1f1f }
+.temp-msg.visible{ opacity:1; transform:translateY(0) }
