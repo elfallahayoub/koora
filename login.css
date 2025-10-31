@@ -14,14 +14,54 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  flex-direction: column;
 }
 
+/* HEADER identique à la home page */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  color: #ffcc00;
+  padding: 15px 40px;
+  position: fixed;  /* pour qu’il reste visible même quand on scrolle */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #ffcc00;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #fff265;
+}
+
+/* LOGIN BOX */
 .login-container {
   background-color: #fff;
   padding: 30px;
   width: 380px;
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  margin-top: 120px; /* pour ne pas cacher le header */
 }
 
 .login-container h2 {
