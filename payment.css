@@ -5,14 +5,56 @@
   padding: 0;
 }
 
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  color: #ffcc00;
+  padding: 15px 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: white;
+}
+
+
 body {
   background-color: black;
-  background-image: url('assets/images/img_foot.jpg'); 
+  background-image: url('assets/images/img_foot.jpg');
+  background-size: cover;
+  background-position: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding-top: 100px; /* pour que le formulaire ne passe pas sous le header */
 }
+
 
 .payment-container {
   background-color: #fff;
@@ -20,6 +62,7 @@ body {
   width: 380px;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-top: 40px;
 }
 
 .payment-container h2 {
@@ -65,7 +108,7 @@ input:focus {
 .pay-btn {
   width: 100%;
   padding: 12px;
-  background-color:yellow;
+  background-color: yellow;
   border: none;
   color: black;
   border-radius: 8px;
@@ -76,6 +119,7 @@ input:focus {
 
 .pay-btn:hover {
   background-color: blue;
+  color: white;
 }
 
 .footer-text {
@@ -83,4 +127,11 @@ input:focus {
   margin-top: 15px;
   font-size: 13px;
   color: #777;
+}
+
+.success-message {
+  text-align: center;
+  color: green;
+  margin-top: 15px;
+  font-weight: 600;
 }
